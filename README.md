@@ -1,4 +1,4 @@
-# Argent-Bank
+# Argent-Bank-front-end
 
 <!-- <img src ="./src/assets/illustrationReadMe/sport-see.png" title = "SportSee Dashboard" alt = "SportSee Dashboard" /> -->
 
@@ -7,7 +7,7 @@
 1. To clone the Front-end project repo and be able to add your code, please enter the following command:
 
 ```
-git clone https://github.com/FaridBF/Argent-Bank.git
+git clone https://github.com/FaridBF/argent-bank-front-end.git
 ```
 
 2. Prerequisites
