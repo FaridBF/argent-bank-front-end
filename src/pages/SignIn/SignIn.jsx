@@ -38,7 +38,7 @@ export default function SignIn() {
               <input type='checkbox' id='remember-me' />
               <label for='remember-me'>Remember me</label>
             </div>
-            <a href='./user.html' class='sign-in-button'>
+            <a href='/user' class='sign-in-button'>
               Sign In
             </a>
             <button class='sign-in-button'>Sign In</button>
