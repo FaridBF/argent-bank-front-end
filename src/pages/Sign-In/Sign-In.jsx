@@ -1,26 +1,12 @@
 import React from 'react';
+
+import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 
 export default function SignIn() {
   return (
     <div>
-      <nav class='main-nav'>
-        <a class='main-nav-logo' href='/'>
-          <img
-            className='main-nav-logo-image'
-            alt='Argent Bank Logo'
-            src={argentBankLogo}
-          />
-          <h1 class='sr-only'>Argent Bank</h1>
-        </a>
-        <div>
-          <a class='main-nav-item' href='/sign-in'>
-            <i class='fa fa-user-circle'></i>
-            Sign In
-          </a>
-        </div>
-      </nav>
+      <Header />
       <main class='main bg-dark'>
         <section class='sign-in-content'>
           <i class='fa fa-user-circle sign-in-icon'></i>

@@ -1,32 +1,18 @@
 import React from 'react';
 
 import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+
 import '../Home/home.css';
 
 import iconSecurity from '../../assets/icons/icon-security.png';
-import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 import iconChat from '../../assets/icons/icon-chat.png';
 import iconMoney from '../../assets/icons/icon-money.png';
 
 export default function Home() {
   return (
     <div>
-      <nav className='main-nav'>
-        <a className='main-nav-logo' href='/'>
-          <img
-            className='main-nav-logo-image'
-            alt='Argent Bank Logo'
-            src={argentBankLogo}
-          />
-          <h1 className='sr-only'>Argent Bank</h1>
-        </a>
-        <div>
-          <a className='main-nav-item' href='/sign-in'>
-            <i className='fa fa-user-circle'></i>
-            Sign In
-          </a>
-        </div>
-      </nav>
+      <Header />
       <main>
         <div className='hero'>
           <section className='hero-content'>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import argentBankLogo from '../../assets/logo/argentBankLogo.png';
+import { Link } from 'react-router-dom';
+
+import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
 
@@ -12,26 +14,7 @@ export default function User() {
 
   return (
     <div>
-      <nav className='main-nav'>
-        <a className='main-nav-logo' href='/'>
-          <img
-            className='main-nav-logo-image'
-            alt='Argent Bank Logo'
-            src={argentBankLogo}
-          />
-          <h1 className='sr-only'>Argent Bank</h1>
-        </a>
-        <div>
-          <a className='main-nav-item' href='/user'>
-            <i className='fa fa-user-circle'></i>
-            Tony
-          </a>
-          <a className='main-nav-item' href='/'>
-            <i className='fa fa-sign-out'></i>
-            Sign Out
-          </a>
-        </div>
-      </nav>
+      <Header />
       <main className='main bg-dark'>
         <div className='header'>
           <h1>
@@ -54,7 +37,9 @@ export default function User() {
             <p className='account-amount-description'>Available Balance</p>
           </div>
           <div className='account-content-wrapper cta'>
-            <button className='transaction-button'>View transactions</button>
+            <Link to='/transactions'>
+              <button className='transaction-button'>View transactions</button>
+            </Link>
           </div>
         </section>
         <section className='account'>
@@ -64,7 +49,9 @@ export default function User() {
             <p className='account-amount-description'>Available Balance</p>
           </div>
           <div className='account-content-wrapper cta'>
-            <button className='transaction-button'>View transactions</button>
+            <Link to='/transactions'>
+              <button className='transaction-button'>View transactions</button>
+            </Link>{' '}
           </div>
         </section>
         <section className='account'>
@@ -74,7 +61,9 @@ export default function User() {
             <p className='account-amount-description'>Current Balance</p>
           </div>
           <div className='account-content-wrapper cta'>
-            <button className='transaction-button'>View transactions</button>
+            <Link to='/transactions'>
+              <button className='transaction-button'>View transactions</button>
+            </Link>
           </div>
         </section>
       </main>
