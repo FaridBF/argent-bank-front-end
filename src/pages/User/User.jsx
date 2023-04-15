@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
+import AccountUser from '../../components/AccountUser/AccountUser';
 
 export default function User() {
   const [showEditName, setShowEditName] = useState(false);
@@ -11,6 +11,10 @@ export default function User() {
   const handleClick = () => {
     setShowEditName(true);
   };
+
+  const accountTitle = 'Argent Bank Savings (x6712)';
+  const accountAmount = '$10,928.42';
+  const accountAmountDescription = 'Available Balance';
 
   return (
     <div>
@@ -30,42 +34,21 @@ export default function User() {
           </div>
         </div>
         <h2 className='sr-only'>Accounts</h2>
-        <section className='account'>
-          <div className='account-content-wrapper'>
-            <h3 className='account-title'>Argent Bank Checking (x8349)</h3>
-            <p className='account-amount'>$2,082.79</p>
-            <p className='account-amount-description'>Available Balance</p>
-          </div>
-          <div className='account-content-wrapper cta'>
-            <Link to='/transactions'>
-              <button className='transaction-button'>View transactions</button>
-            </Link>
-          </div>
-        </section>
-        <section className='account'>
-          <div className='account-content-wrapper'>
-            <h3 className='account-title'>Argent Bank Savings (x6712)</h3>
-            <p className='account-amount'>$10,928.42</p>
-            <p className='account-amount-description'>Available Balance</p>
-          </div>
-          <div className='account-content-wrapper cta'>
-            <Link to='/transactions'>
-              <button className='transaction-button'>View transactions</button>
-            </Link>{' '}
-          </div>
-        </section>
-        <section className='account'>
-          <div className='account-content-wrapper'>
-            <h3 className='account-title'>Argent Bank Credit Card (x8349)</h3>
-            <p className='account-amount'>$184.30</p>
-            <p className='account-amount-description'>Current Balance</p>
-          </div>
-          <div className='account-content-wrapper cta'>
-            <Link to='/transactions'>
-              <button className='transaction-button'>View transactions</button>
-            </Link>
-          </div>
-        </section>
+        <AccountUser
+          accountTitle={accountTitle}
+          accountAmount={accountAmount}
+          accountAmountDescription={accountAmountDescription}
+        />
+        <AccountUser
+          accountTitle={accountTitle}
+          accountAmount={accountAmount}
+          accountAmountDescription={accountAmountDescription}
+        />
+        <AccountUser
+          accountTitle={accountTitle}
+          accountAmount={accountAmount}
+          accountAmountDescription={accountAmountDescription}
+        />
       </main>
       <Footer />
     </div>
