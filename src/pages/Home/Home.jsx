@@ -8,8 +8,19 @@ import '../Home/home.css';
 import iconSecurity from '../../assets/icons/icon-security.png';
 import iconChat from '../../assets/icons/icon-chat.png';
 import iconMoney from '../../assets/icons/icon-money.png';
+import FeaturesItem from '../../components/FeaturesItem/FeaturesItem';
 
 export default function Home() {
+  const titleChat = 'You are our #1 priority';
+  const titleMoney = 'More savings means higher rates';
+  const titleSecurity = 'Security you can trust';
+  const descriptionChat =
+    'Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes.';
+  const descriptionMoney =
+    'The more you save with us, the higher your interest rate will be!';
+  const descriptionSecurity =
+    '  We use top of the line encryption to make sure your data and money is always safe.';
+
   return (
     <div>
       <Header />
@@ -27,33 +38,21 @@ export default function Home() {
         </div>
         <section className='features'>
           <h2 className='sr-only'>Features</h2>
-          <div className='feature-item'>
-            <img alt='Chat Icon' className='feature-icon' src={iconChat} />
-
-            <h3 className='feature-item-title'>You are our #1 priority</h3>
-            <p>
-              Need to talk to a representative? You can get in touch through our
-              24/7 chat or through a phone call in less than 5 minutes.
-            </p>
-          </div>
-          <div className='feature-item'>
-            <img alt='Chat Icon' className='feature-icon' src={iconMoney} />
-            <h3 className='feature-item-title'>
-              More savings means higher rates
-            </h3>
-            <p>
-              The more you save with us, the higher your interest rate will be!
-            </p>
-          </div>
-          <div className='feature-item'>
-            <img alt='Chat Icon' className='feature-icon' src={iconSecurity} />
-
-            <h3 className='feature-item-title'>Security you can trust</h3>
-            <p>
-              We use top of the line encryption to make sure your data and money
-              is always safe.
-            </p>
-          </div>
+          <FeaturesItem
+            icon={iconChat}
+            title={titleChat}
+            description={descriptionChat}
+          />
+          <FeaturesItem
+            icon={iconMoney}
+            title={titleMoney}
+            description={descriptionMoney}
+          />
+          <FeaturesItem
+            icon={iconSecurity}
+            title={titleSecurity}
+            description={descriptionSecurity}
+          />
         </section>
       </main>
       <Footer />
