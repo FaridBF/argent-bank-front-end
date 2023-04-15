@@ -10,13 +10,13 @@
 .title-error404 {
   font-weight: 700;
   font-size: 18rem;
-  color: #ff0101;
+  color: #005935;
 }
 
 .description-error404 {
   font-weight: 500;
   font-size: 2.25rem;
-  color: #ff0101;
+  color: #00bc78;
   font-style: normal;
 }
 
@@ -25,10 +25,10 @@
   align-items: flex-end;
   height: 6.25rem;
   font-size: 1.12rem;
-  color: #ff0101;
+  color: #005935;
   font-weight: 500;
 }
 
 .link-home:hover {
-  color: #020203;
+  color: #00bc78;
 }
