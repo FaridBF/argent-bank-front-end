@@ -3,10 +3,10 @@ import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import '../Home/home.css';
 
-import iconSecurity from '../../images/icon-security.png';
-import argentBankLogo from '../../images/argentBankLogo.png';
-import iconChat from '../../images/icon-chat.png';
-import iconMoney from '../../images/icon-money.png';
+import iconSecurity from '../../assets/icons/icon-security.png';
+import argentBankLogo from '../../assets/logo/argentBankLogo.png';
+import iconChat from '../../assets/icons/icon-chat.png';
+import iconMoney from '../../assets/icons/icon-money.png';
 
 export default function Home() {
   return (

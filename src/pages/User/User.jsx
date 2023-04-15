@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import argentBankLogo from '../../images/argentBankLogo.png';
+import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
 

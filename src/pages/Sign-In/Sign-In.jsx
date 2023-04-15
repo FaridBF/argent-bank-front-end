@@ -1,12 +1,12 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
-import argentBankLogo from '../../images/argentBankLogo.png';
+import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 
 export default function SignIn() {
   return (
     <div>
       <nav class='main-nav'>
-        <a class='main-nav-logo' href='./index.html'>
+        <a class='main-nav-logo' href='/'>
           <img
             className='main-nav-logo-image'
             alt='Argent Bank Logo'
@@ -15,7 +15,7 @@ export default function SignIn() {
           <h1 class='sr-only'>Argent Bank</h1>
         </a>
         <div>
-          <a class='main-nav-item' href='./sign-in.html'>
+          <a class='main-nav-item' href='/sign-in'>
             <i class='fa fa-user-circle'></i>
             Sign In
           </a>
