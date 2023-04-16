@@ -7,27 +7,27 @@ export default function Login() {
   return (
     <div>
       <Header />
-      <main class='main bg-dark'>
-        <section class='login-content'>
-          <i class='fa fa-user-circle login-icon'></i>
+      <main className='main bg-dark'>
+        <section className='login-content'>
+          <i className='fa fa-user-circle login-icon'></i>
           <h1>Sign In</h1>
           <form>
-            <div class='input-wrapper'>
-              <label for='username'>Username</label>
+            <div className='input-wrapper'>
+              <label htmlFor='username'>Username</label>
               <input type='text' id='username' />
             </div>
-            <div class='input-wrapper'>
-              <label for='password'>Password</label>
+            <div className='input-wrapper'>
+              <label htmlFor='password'>Password</label>
               <input type='password' id='password' />
             </div>
-            <div class='input-remember'>
+            <div className='input-remember'>
               <input type='checkbox' id='remember-me' />
-              <label for='remember-me'>Remember me</label>
+              <label htmlFor='remember-me'>Remember me</label>
             </div>
-            <a href='/profile' class='login-button'>
+            <a href='/profile' className='login-button'>
               Sign In
             </a>
-            <button class='login-button'>Sign In</button>
+            <button className='login-button'>Sign In</button>
           </form>
         </section>
       </main>
