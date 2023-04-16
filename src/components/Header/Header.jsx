@@ -5,8 +5,8 @@ import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 export default function Header() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-  const isUserPage = location.pathname === '/user';
-  const isSignInPage = location.pathname === '/sign-in';
+  const isUserPage = location.pathname === '/profile';
+  const isSignInPage = location.pathname === '/login';
   const isTransactionsPage = location.pathname === '/transactions';
 
   return (
@@ -23,7 +23,7 @@ export default function Header() {
               <h1 className='sr-only'>Argent Bank</h1>
             </a>
             <div>
-              <a className='main-nav-item' href='/sign-in'>
+              <a className='main-nav-item' href='/login'>
                 <i className='fa fa-user-circle'></i>
                 Sign In
               </a>
@@ -41,7 +41,7 @@ export default function Header() {
               <h1 className='sr-only'>Argent Bank</h1>
             </a>
             <div>
-              <a className='main-nav-item' href='/user'>
+              <a className='main-nav-item' href='/profile'>
                 <i className='fa fa-user-circle'></i>
                 Tony
               </a>

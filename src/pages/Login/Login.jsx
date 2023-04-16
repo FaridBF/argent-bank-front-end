@@ -3,13 +3,13 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
-export default function SignIn() {
+export default function Login() {
   return (
     <div>
       <Header />
       <main class='main bg-dark'>
-        <section class='sign-in-content'>
-          <i class='fa fa-user-circle sign-in-icon'></i>
+        <section class='login-content'>
+          <i class='fa fa-user-circle login-icon'></i>
           <h1>Sign In</h1>
           <form>
             <div class='input-wrapper'>
@@ -24,10 +24,10 @@ export default function SignIn() {
               <input type='checkbox' id='remember-me' />
               <label for='remember-me'>Remember me</label>
             </div>
-            <a href='/user' class='sign-in-button'>
+            <a href='/profile' class='login-button'>
               Sign In
             </a>
-            <button class='sign-in-button'>Sign In</button>
+            <button class='login-button'>Sign In</button>
           </form>
         </section>
       </main>

@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
 import AccountUser from '../../components/AccountUser/AccountUser';
 
-export default function User() {
+export default function Profile() {
   const [showEditName, setShowEditName] = useState(false);
 
   const handleClick = () => {

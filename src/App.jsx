@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Page404 from './pages/Page404/Page404';
 import Home from './pages/Home/Home';
-import SignIn from './pages/Sign-In/Sign-In';
-import User from './pages/User/User';
+import Login from './pages/Login/Login';
+import Profile from './pages/Profile/Profile';
 import Transactions from './pages/Transactions/Transactions';
 /**
  * Router is a variable that represents a browser router for the application.
@@ -19,8 +19,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/sign-in' element={<SignIn />} />
-          <Route path='/user' element={<User />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/transactions' element={<Transactions />} />
           <Route path='*' element={<Page404 />} />
           <Route path='/error' element={<Page404 />} />
