@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import Transactions from './pages/Transactions/Transactions';
+import SignUp from './pages/SignUp/SignUp';
 /**
  * Router is a variable that represents a browser router for the application.
  * The router is created using the `BrowserRouter` function from the `react-router-dom` library.
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/transactions' element={<Transactions />} />
           <Route path='*' element={<Page404 />} />
