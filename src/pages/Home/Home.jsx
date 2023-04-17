@@ -2,6 +2,7 @@ import React from 'react';
 
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import Banner from '../../components/Banner/Banner';
 
 import '../Home/home.css';
 
@@ -25,17 +26,7 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <div className='hero'>
-          <section className='hero-content'>
-            <h2 className='sr-only'>Promoted Content</h2>
-            <p className='subtitle'>No fees.</p>
-            <p className='subtitle'>No minimum deposit.</p>
-            <p className='subtitle'>High interest rates.</p>
-            <p className='text'>
-              Open a savings account with Argent Bank today!
-            </p>
-          </section>
-        </div>
+        <Banner />
         <section className='features'>
           <h2 className='sr-only'>Features</h2>
           <FeaturesItem
