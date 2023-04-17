@@ -12,14 +12,16 @@ import iconMoney from '../../assets/icons/icon-money.png';
 import FeaturesItem from '../../components/FeaturesItem/FeaturesItem';
 
 export default function Home() {
-  const titleChat = 'You are our #1 priority';
-  const titleMoney = 'More savings means higher rates';
-  const titleSecurity = 'Security you can trust';
-  const descriptionChat =
+  // Feature's titles
+  const featureTitleChat = 'You are our #1 priority';
+  const featureTitleMoney = 'More savings means higher rates';
+  const featureTitleSecurity = 'Security you can trust';
+  // Feature's texts
+  const featureDescriptionChat =
     'Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes.';
-  const descriptionMoney =
+  const featureDescriptionMoney =
     'The more you save with us, the higher your interest rate will be!';
-  const descriptionSecurity =
+  const featureDescriptionSecurity =
     '  We use top of the line encryption to make sure your data and money is always safe.';
 
   return (
@@ -31,18 +33,18 @@ export default function Home() {
           <h2 className='sr-only'>Features</h2>
           <FeaturesItem
             icon={iconChat}
-            title={titleChat}
-            description={descriptionChat}
+            title={featureTitleChat}
+            description={featureDescriptionChat}
           />
           <FeaturesItem
             icon={iconMoney}
-            title={titleMoney}
-            description={descriptionMoney}
+            title={featureTitleMoney}
+            description={featureDescriptionMoney}
           />
           <FeaturesItem
             icon={iconSecurity}
-            title={titleSecurity}
-            description={descriptionSecurity}
+            title={featureTitleSecurity}
+            description={featureDescriptionSecurity}
           />
         </section>
       </main>
