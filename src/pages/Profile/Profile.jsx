@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
 import AccountUser from '../../components/AccountUser/AccountUser';
 
+import serviceApi from '../../services/serviceAPI';
+
 export default function Profile() {
   const [showEditName, setShowEditName] = useState(false);
-
   const handleClick = () => {
     setShowEditName(true);
   };
@@ -15,6 +17,19 @@ export default function Profile() {
   const accountTitle = 'Argent Bank Savings (x6712)';
   const accountAmount = '$10,928.42';
   const accountAmountDescription = 'Available Balance';
+
+  const fetchData = async () => {
+    try {
+      const responseProfile = await serviceApi.modifyProfile();
+      console.log('responseProfile', responseProfile);
+    } catch (error) {
+      // alert('Une erreur est survenue lors du chargement des données.');
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div>

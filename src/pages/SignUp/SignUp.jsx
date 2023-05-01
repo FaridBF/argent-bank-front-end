@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -21,6 +22,10 @@ export default function SignUp() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const onSubmit = (d) => console.log(JSON.stringify(d));
+  const { register, handleSubmit } = useForm();
+
   return (
     <div>
       <Header />
@@ -28,24 +33,39 @@ export default function SignUp() {
         <section className='login-content'>
           <i className='fa fa-user-circle login-icon'></i>
           <h1>Sign up</h1>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className='input-wrapper'>
               <label htmlFor='email'>Email</label>
-              <input type='text' id='email' />
+              <input
+                {...register('email')}
+                type='text'
+                id='email'
+                placeholder='thierry@gmail.com'
+              />
             </div>
             <div className='input-wrapper'>
               <label htmlFor='password'>Password</label>
-              <input type='password' id='password' />
+              <input {...register('password')} type='password' id='password' />
             </div>
             <div className='input-wrapper'>
               <label htmlFor='firstName'>FirstName</label>
-              <input type='text' id='firstName' />
+              <input
+                {...register('firstName')}
+                type='text'
+                id='firstName'
+                placeholder='Prénom'
+              />
             </div>
             <div className='input-wrapper'>
               <label htmlFor='lastname'>LastName</label>
-              <input type='text' id='lastname' />
+              <input
+                {...register('lastname')}
+                type='text'
+                id='lastname'
+                placeholder='Nom'
+              />
             </div>
-            <button className='login-button'>Validate</button>
+            <input type='submit' value='Submit' className='login-button' />
           </form>
         </section>
       </main>
