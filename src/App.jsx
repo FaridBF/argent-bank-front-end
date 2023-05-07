@@ -1,4 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
 import Page404 from './pages/Page404/Page404';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
@@ -17,17 +21,19 @@ import SignUp from './pages/SignUp/SignUp';
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/transactions' element={<Transactions />} />
-          <Route path='*' element={<Page404 />} />
-          <Route path='/error' element={<Page404 />} />
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/transactions' element={<Transactions />} />
+            <Route path='*' element={<Page404 />} />
+            <Route path='/error' element={<Page404 />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 }
