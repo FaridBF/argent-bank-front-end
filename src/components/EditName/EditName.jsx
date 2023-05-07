@@ -5,8 +5,8 @@ export default function EditName() {
   return (
     <div className='container-editName'>
       <div className='top-container-editName'>
-        <input placeholder='Tony' type='text' name='name' />
-        <input placeholder='Jarvis' type='text' name='name' />
+        <input placeholder='Tony' type='text' name='firstName' />
+        <input placeholder='Jarvis' type='text' name='lastName' />
       </div>
       <div className='bottom-container-editName'>
         <button>Save</button>

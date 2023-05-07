@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+// import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -9,6 +10,9 @@ import serviceApi from '../../services/serviceAPI';
 
 export default function Login() {
   const navigate = useNavigate();
+  //redux
+  // const selector = useSelector((state) => state.auth);
+  // const dispatch = useDispatch();
 
   const onSubmit = async (formData) => {
     try {
@@ -60,7 +64,7 @@ export default function Login() {
             </a>
             <input type='submit' value='Submit' className='login-button' />
             <a href='/signup' className='login-button'>
-              Lien vers signup
+              Sign Up
             </a>
           </form>
         </section>

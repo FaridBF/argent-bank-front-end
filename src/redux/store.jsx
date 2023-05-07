@@ -1,33 +1,29 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-
-// import rootReducer from './reducers/reducer';
-
-const authSlice = createSlice({
-  name: 'auth',
-  initialState: {
-    authenticated: false
-  },
-  reducers: {
-    connectUser: (state, action) => {
-      state.authenticated = true;
-    },
-    disconnectUser: (state, action) => {
-      state.authenticated = false;
-    }
-  }
-});
-
-// Export mes actions
-export const { connectUser, disconnectUser } = authSlice.actions;
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './reducers/rootReducer';
 
 export const store = configureStore({
-  reducer:
-    // rootReducer,
-    {
-      auth: authSlice.reducer
-    },
+  reducer: rootReducer,
   devTools: true
-  // devTools: process.env.NODE_ENV !== 'production'
 });
 
 export default store;
+
+// import {
+//   configureStore
+//   //  getDefaultMiddleware
+// } from '@reduxjs/toolkit';
+// import rootReducer from './reducers/rootReducer';
+// // import logger from 'redux-logger';
+
+// // const middleware = [...getDefaultMiddleware(), logger];
+
+// const store = configureStore({
+//   reducer: rootReducer,
+//   // middleware: middleware,
+//   devTools: true,
+//   preloadedState: {
+//     /* votre état initial */
+//   }
+// });
+
+// export default store;
