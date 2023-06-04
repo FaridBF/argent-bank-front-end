@@ -21,8 +21,10 @@ function login(data) {
       console.log('reponse', response);
       const token = response.data.body.token;
       console.log('token', token);
+      console.log('login OK');
     })
     .catch((error) => {
+      console.log('login KO');
       const codeError = error.response?.data.status;
 
       console.log('codeError', codeError);

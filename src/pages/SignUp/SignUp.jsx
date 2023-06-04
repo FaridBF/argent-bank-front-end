@@ -1,29 +1,38 @@
 import React from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { useDispatch } from 'react-redux';
+import { signUpUser } from '../../redux/reducers/authSlice';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
-import serviceApi from '../../services/serviceAPI';
+// import serviceApi from '../../services/serviceAPI';
 
 import '../SignUp/signup.css';
 
 export default function SignUp() {
-  const fetchData = async () => {
-    try {
-      const responseSignUp = await serviceApi.signup();
-      console.log('responseSignUp', responseSignUp);
-    } catch (error) {
-      alert('Une erreur est survenue lors du chargement des données.');
-    }
-  };
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // const fetchData = async () => {
+  //   try {
+  //     const responseSignUp = await serviceApi.signup();
+  //     console.log('responseSignUp', responseSignUp);
+  //   } catch (error) {
+  //     alert('Une erreur est survenue lors du chargement des données.');
+  //   }
+  // };
 
-  const onSubmit = (d) => console.log(JSON.stringify(d));
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  const onSubmit = (formDataSignUp) =>
+    // console.log(
+    //   JSON.stringify(formDataSignUp),
+    dispatch(signUpUser({ formDataSignUp }));
+  // );
   const { register, handleSubmit } = useForm();
 
   return (
@@ -48,7 +57,7 @@ export default function SignUp() {
               <input {...register('password')} type='password' id='password' />
             </div>
             <div className='input-wrapper'>
-              <label htmlFor='firstName'>FirstName</label>
+              <label htmlFor='firstName'>Prénom</label>
               <input
                 {...register('firstName')}
                 type='text'
@@ -57,7 +66,7 @@ export default function SignUp() {
               />
             </div>
             <div className='input-wrapper'>
-              <label htmlFor='lastname'>LastName</label>
+              <label htmlFor='lastname'>Nom</label>
               <input
                 {...register('lastname')}
                 type='text'

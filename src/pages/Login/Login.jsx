@@ -1,24 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-
-import serviceApi from '../../services/serviceAPI';
+import { signInUser } from '../../redux/reducers/authSlice';
 
 export default function Login() {
   const navigate = useNavigate();
   //redux
-  // const selector = useSelector((state) => state.auth);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formDataSignIn) => {
+    console.log('formDataSignIn', formDataSignIn);
     try {
-      const responseLogin = await serviceApi.login(formData);
+      dispatch(signInUser({ formDataSignIn }));
       navigate('/profile');
-      // console.log('responseLogin', responseLogin);
     } catch (error) {
       console.log(error);
     }
@@ -59,9 +57,9 @@ export default function Login() {
               <input type='checkbox' id='remember-me' />
               <label htmlFor='remember-me'>Remember me</label>
             </div>
-            <a href='/profile' className='login-button'>
+            {/* <a href='/profile' className='login-button'>
               Sign In
-            </a>
+            </a> */}
             <input type='submit' value='Submit' className='login-button' />
             <a href='/signup' className='login-button'>
               Sign Up
