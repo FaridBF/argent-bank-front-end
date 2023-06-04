@@ -5,17 +5,15 @@ import { useDispatch } from 'react-redux';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { signInUser } from '../../redux/reducers/authSlice';
+import logInMiddleware from '../../redux/middleware/logInMiddleware';
 
 export default function Login() {
   const navigate = useNavigate();
-  //redux
   const dispatch = useDispatch();
 
   const onSubmit = async (formDataSignIn) => {
-    console.log('formDataSignIn', formDataSignIn);
     try {
-      dispatch(signInUser({ formDataSignIn }));
+      dispatch(logInMiddleware(formDataSignIn));
       navigate('/profile');
     } catch (error) {
       console.log(error);
