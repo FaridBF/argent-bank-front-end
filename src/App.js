@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import store from '../src/redux/store';
+import store from './redux/store/redux-store';
 
 import Page404 from './pages/Page404/Page404';
 import Home from './pages/Home/Home';

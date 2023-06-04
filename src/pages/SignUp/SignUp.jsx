@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import { useDispatch } from 'react-redux';
-import { signUpUser } from '../../redux/reducers/authSlice';
+import userStore from '../../redux/store/userStore';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -31,7 +31,7 @@ export default function SignUp() {
   const onSubmit = (formDataSignUp) =>
     // console.log(
     //   JSON.stringify(formDataSignUp),
-    dispatch(signUpUser({ formDataSignUp }));
+    dispatch(userStore.signUpUser({ formDataSignUp }));
   // );
   const { register, handleSubmit } = useForm();
 

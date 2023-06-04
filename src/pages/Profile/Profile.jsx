@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
 import AccountUser from '../../components/AccountUser/AccountUser';
 
-import serviceApi from '../../services/serviceAPI';
+// import userStore from '../../redux/store/userStore.jsx';
 
 export default function Profile() {
   const [showEditName, setShowEditName] = useState(false);
@@ -20,8 +20,8 @@ export default function Profile() {
 
   const fetchData = async () => {
     try {
-      const responseProfile = await serviceApi.modifyProfile();
-      console.log('responseProfile', responseProfile);
+      // const responseProfile = await userStore.modifyProfile();
+      // console.log('responseProfile', responseProfile);
     } catch (error) {
       // alert('Une erreur est survenue lors du chargement des données.');
     }
