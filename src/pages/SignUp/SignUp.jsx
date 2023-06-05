@@ -1,38 +1,28 @@
 import React from 'react';
-// import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
-import userStore from '../../redux/store/userStore';
+import signUpMiddleware from '../../redux/middleware/signUpMiddleware';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
-// import serviceApi from '../../services/serviceAPI';
-
 import '../SignUp/signup.css';
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // const fetchData = async () => {
-  //   try {
-  //     const responseSignUp = await serviceApi.signup();
-  //     console.log('responseSignUp', responseSignUp);
-  //   } catch (error) {
-  //     alert('Une erreur est survenue lors du chargement des données.');
-  //   }
-  // };
+  const onSubmit = async (formDataSignUp) => {
+    try {
+      dispatch(signUpMiddleware(formDataSignUp));
+      navigate('/login');
+    } catch (error) {
+      console.log('composant signup', error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  const onSubmit = (formDataSignUp) =>
-    // console.log(
-    //   JSON.stringify(formDataSignUp),
-    dispatch(userStore.signUpUser({ formDataSignUp }));
-  // );
   const { register, handleSubmit } = useForm();
 
   return (

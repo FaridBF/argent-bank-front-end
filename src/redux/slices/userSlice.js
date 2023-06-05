@@ -9,7 +9,7 @@ const initialState = {
   token: undefined,
   error: false,
   errorMessage: '',
-  status: false
+  isConnected: false
 };
 
 export const userSlice = createSlice({
@@ -17,8 +17,15 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     signIn: (state, action) => {
+      console.log('signin reducer:', action);
       state.token = action.payload.token;
-      state.status = true;
+      state.isConnected = true;
+      state.error = false;
+      console.log('state.token', state.token);
+    },
+    signUp: (state, action) => {
+      state.token = action.payload.token;
+      state.isConnected = false;
       state.error = false;
     },
     showError: (state, action) => {
@@ -29,5 +36,5 @@ export const userSlice = createSlice({
 });
 
 //export des mes actions
-export const { signIn, showError } = userSlice.actions;
+export const { signIn, signUp, showError } = userSlice.actions;
 export default userSlice.reducer;
