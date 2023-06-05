@@ -2,10 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import logInMiddleware from '../../redux/middleware/logInMiddleware';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import logInMiddleware from '../../redux/middleware/logInMiddleware';
 
 export default function Login() {
   const navigate = useNavigate();
