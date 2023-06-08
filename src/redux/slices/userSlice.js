@@ -17,16 +17,21 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     signIn: (state, action) => {
-      console.log('signin reducer:', action);
       state.token = action.payload.token;
       state.isConnected = true;
       state.error = false;
-      console.log('state.token', state.token);
     },
     signUp: (state, action) => {
       state.token = action.payload.token;
       state.isConnected = false;
       state.error = false;
+    },
+    getProfile: (state, action) => {
+      console.log('userProfile reducer:', action);
+      state.email = action.payload.email;
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+      state.id = action.payload.id;
     },
     showError: (state, action) => {
       state.error = true;
@@ -36,5 +41,5 @@ export const userSlice = createSlice({
 });
 
 //export des mes actions
-export const { signIn, signUp, showError } = userSlice.actions;
+export const { signIn, signUp, showError, getProfile } = userSlice.actions;
 export default userSlice.reducer;

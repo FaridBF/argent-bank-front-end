@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+import userProfileMiddleware from '../../redux/middleware/userProfileMiddleware';
+import { getUserProfile } from '../../redux/store/userStore';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import EditName from '../../components/EditName/EditName';
 import AccountUser from '../../components/AccountUser/AccountUser';
 
-// import userStore from '../../redux/store/userStore.jsx';
-
 export default function Profile() {
+  // const dispatch = useDispatch();
+  const selectedToken = useSelector((state) => state.user.token);
+  console.log('selectedToken', selectedToken);
+
   const [showEditName, setShowEditName] = useState(false);
   const handleClick = () => {
     setShowEditName(true);
@@ -18,18 +25,24 @@ export default function Profile() {
   const accountAmount = '$10,928.42';
   const accountAmountDescription = 'Available Balance';
 
-  const fetchData = async () => {
+  const fetchData = () => {
+    // console.log('token dans profile', token);
+
     try {
-      // const responseProfile = await userStore.modifyProfile();
-      // console.log('responseProfile', responseProfile);
+      getUserProfile(selectedToken);
+      // dispatch(userProfileMiddleware(selectedToken));
+      console.log('token dans profile', selectedToken);
     } catch (error) {
-      // alert('Une erreur est survenue lors du chargement des données.');
+      console.log(error);
     }
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (selectedToken) {
+      console.log('selectedToken ds useeffect:', selectedToken);
+      fetchData();
+    }
+  }, [selectedToken]);
 
   return (
     <div>
