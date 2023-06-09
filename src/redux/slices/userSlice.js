@@ -34,6 +34,12 @@ export const userSlice = createSlice({
       state.lastName = action.payload.lastName;
       state.id = action.payload.id;
     },
+    editProfile: (state, action) => {
+      console.log('editProfile reducer:', state);
+      console.log('editProfile reducer:', action);
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+    },
     showError: (state, action) => {
       state.error = true;
       state.errorMessage = action.payload.errorMessage;
@@ -42,5 +48,6 @@ export const userSlice = createSlice({
 });
 
 //export des mes actions
-export const { signIn, signUp, showError, getProfile } = userSlice.actions;
+export const { signIn, signUp, showError, getProfile, editProfile } =
+  userSlice.actions;
 export default userSlice.reducer;
