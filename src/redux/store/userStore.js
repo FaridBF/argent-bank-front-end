@@ -6,7 +6,7 @@ export const signUpUser = async (formDataSignUp) => {
     `http://localhost:3001/api/v1/user/signup`,
     formDataSignUp
   );
-  console.log('response-signup', response);
+  // console.log('response-signup', response);
   return await response.data;
 };
 
@@ -19,13 +19,14 @@ export const signInUser = async (formDataSignIn) => {
 };
 
 export const getUserProfile = async (token) => {
+  // console.log('response-profile -token', token);
+
   const axiosInstance = axios.create({
     baseURL: `http://localhost:3001/api/v1`,
     headers: { Authorization: `Bearer ${token}` }
   });
   const response = await axiosInstance.post(`/user/profile`);
-
-  // return await response.data;
+  // console.log('response-profile', response);
   return response.data;
 };
 
