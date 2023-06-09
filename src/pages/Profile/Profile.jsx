@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import userProfileMiddleware from '../../redux/middleware/userProfileMiddleware';
-import { getUserProfile } from '../../redux/store/userStore';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -12,26 +11,21 @@ import EditName from '../../components/EditName/EditName';
 import AccountUser from '../../components/AccountUser/AccountUser';
 
 export default function Profile() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const selectedToken = useSelector((state) => state.user.token);
-  console.log('selectedToken', selectedToken);
+
+  const firstName = useSelector((state) => state.user.firstName);
+  const lastName = useSelector((state) => state.user.lastName);
 
   const [showEditName, setShowEditName] = useState(false);
   const handleClick = () => {
     setShowEditName(true);
   };
 
-  const accountTitle = 'Argent Bank Savings (x6712)';
-  const accountAmount = '$10,928.42';
-  const accountAmountDescription = 'Available Balance';
-
   const fetchData = () => {
-    // console.log('token dans profile', token);
-
     try {
-      getUserProfile(selectedToken);
-      // dispatch(userProfileMiddleware(selectedToken));
-      console.log('token dans profile', selectedToken);
+      dispatch(userProfileMiddleware(selectedToken));
+      // console.log('token dans profile', selectedToken);
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +33,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (selectedToken) {
-      console.log('selectedToken ds useeffect:', selectedToken);
+      // console.log('selectedToken ds useeffect:', selectedToken);
       fetchData();
     }
   }, [selectedToken]);
@@ -52,7 +46,7 @@ export default function Profile() {
           <h1>
             Welcome back
             <br />
-            Tony Jarvis!
+            {firstName} {lastName}
           </h1>
           <div>
             <button className='edit-button' onClick={handleClick}>
@@ -63,19 +57,19 @@ export default function Profile() {
         </div>
         <h2 className='sr-only'>Accounts</h2>
         <AccountUser
-          accountTitle={accountTitle}
-          accountAmount={accountAmount}
-          accountAmountDescription={accountAmountDescription}
+          accountTitle={'Argent Bank Checking (x8349)'}
+          accountAmount={'2520.34'}
+          accountAmountDescription={'Available Balance'}
         />
         <AccountUser
-          accountTitle={accountTitle}
-          accountAmount={accountAmount}
-          accountAmountDescription={accountAmountDescription}
+          accountTitle={'Argent Bank Savings (x6712)'}
+          accountAmount={'14296.42'}
+          accountAmountDescription={'Available Balance'}
         />
         <AccountUser
-          accountTitle={accountTitle}
-          accountAmount={accountAmount}
-          accountAmountDescription={accountAmountDescription}
+          accountTitle={'Argent Bank CreditCard (x8349)'}
+          accountAmount={'224.35'}
+          accountAmountDescription={'Available Balance'}
         />
       </main>
       <Footer />
