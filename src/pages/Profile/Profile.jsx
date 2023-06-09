@@ -44,6 +44,11 @@ export default function Profile() {
     // console.log('submit', handleSubmit);
   };
 
+  const handleReset = async (e) => {
+    setFisrtName('');
+    setLastName('');
+  };
+
   const fetchData = () => {
     try {
       dispatch(userProfileMiddleware(selectedToken));
@@ -97,7 +102,7 @@ export default function Profile() {
                 </div>
                 <div className='bottom-container-editName'>
                   <button onClick={handleSubmit}>Save</button>
-                  <button>Cancel</button>
+                  <button onClick={handleReset}>Cancel</button>
                 </div>
               </div>
             )}
