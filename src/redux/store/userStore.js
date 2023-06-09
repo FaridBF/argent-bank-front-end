@@ -30,8 +30,24 @@ export const getUserProfile = async (token) => {
   return response.data;
 };
 
+export const editUserProfile = async (token, { firstName, lastName }) => {
+  console.log('editUserProfile', token);
+
+  const axiosInstance = axios.create({
+    baseURL: `http://localhost:3001/api/v1`,
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  const response = await axiosInstance.put(`/user/profile`, {
+    firstName,
+    lastName
+  });
+  console.log('response-edit-profile', response);
+  return response.data;
+};
+
 export default {
   signInUser,
   signUpUser,
-  getUserProfile
+  getUserProfile,
+  editUserProfile
 };
