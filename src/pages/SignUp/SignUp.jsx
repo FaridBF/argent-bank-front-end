@@ -17,7 +17,7 @@ export default function SignUp() {
   const onSubmit = async (formDataSignUp) => {
     try {
       dispatch(signUpMiddleware(formDataSignUp));
-      navigate('/login');
+      // navigate('/login');
     } catch (error) {
       console.log(error);
     }

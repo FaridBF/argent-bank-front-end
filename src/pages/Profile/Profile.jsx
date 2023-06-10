@@ -15,7 +15,6 @@ import './profile.css';
 export default function Profile() {
   const dispatch = useDispatch();
   const selectedToken = useSelector((state) => state.user.token);
-
   const getfirstName = useSelector((state) => state.user.firstName);
   const getlastName = useSelector((state) => state.user.lastName);
 
