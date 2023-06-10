@@ -7,14 +7,17 @@ import logInMiddleware from '../../redux/middleware/logInMiddleware';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
+// import ProtectedRoute from '../../redux/middleware/ProtectedRouteMiddleware';
+
 export default function Login() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = async (formDataSignIn) => {
     try {
       dispatch(logInMiddleware(formDataSignIn));
-      navigate('/profile');
+      // navigate('/profile');
+      // ProtectedRoute;
     } catch (error) {
       console.log(error);
     }

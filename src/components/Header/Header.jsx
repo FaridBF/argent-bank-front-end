@@ -1,10 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 
 export default function Header() {
+  // const logOut = useSelector((state) => state.user.initialState);
+
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const isUserPage = location.pathname === '/profile';
