@@ -6,7 +6,6 @@ export const signUpUser = async (formDataSignUp) => {
     `http://localhost:3001/api/v1/user/signup`,
     formDataSignUp
   );
-  // console.log('response-signup', response);
   return await response.data;
 };
 
@@ -19,20 +18,15 @@ export const signInUser = async (formDataSignIn) => {
 };
 
 export const getUserProfile = async (token) => {
-  // console.log('response-profile -token', token);
-
   const axiosInstance = axios.create({
     baseURL: `http://localhost:3001/api/v1`,
     headers: { Authorization: `Bearer ${token}` }
   });
   const response = await axiosInstance.post(`/user/profile`);
-  // console.log('response-profile', response);
   return response.data;
 };
 
 export const editUserProfile = async (token, { firstName, lastName }) => {
-  console.log('editUserProfile', token);
-
   const axiosInstance = axios.create({
     baseURL: `http://localhost:3001/api/v1`,
     headers: { Authorization: `Bearer ${token}` }
@@ -41,7 +35,6 @@ export const editUserProfile = async (token, { firstName, lastName }) => {
     firstName,
     lastName
   });
-  console.log('response-edit-profile', response);
   return response.data;
 };
 

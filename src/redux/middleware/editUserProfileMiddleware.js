@@ -12,7 +12,6 @@ const userProfileMiddleware = (token, formDatas) => {
     } catch (error) {
       const status = error.response.status;
       if (status === 400) {
-        console.log('erreur status', status);
         dispatch(showError(error.response.data.message));
       } else {
         throw new Error(error.message);

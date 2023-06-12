@@ -7,26 +7,34 @@ export default function ArrayTransactions() {
   const [rows, setRows] = useState([
     {
       id: 1,
-      col1: '20 juin 2020',
-      col2: 'Golden Sun Bakery',
-      col3: '5$',
-      col4: '2000$',
+      col1: 'June 20th,2023',
+      col2: 'Virgin Megastore',
+      col3: '$45',
+      col4: '$2000',
       isCollapsed: true
     },
     {
       id: 2,
-      col1: '20 juin 2020',
-      col2: 'Golden Sun Bakery',
-      col3: '5$',
-      col4: '2000$',
+      col1: 'June 21th,2023',
+      col2: 'Virgin Megastore',
+      col3: '$35',
+      col4: '$1995',
       isCollapsed: true
     },
     {
       id: 3,
-      col1: '20 juin 2020',
-      col2: 'Golden Sun Bakery',
-      col3: '5$',
-      col4: '2000$',
+      col1: 'June 22th,2023',
+      col2: 'Virgin Megastore',
+      col3: '$1000',
+      col4: '$995',
+      isCollapsed: true
+    },
+    {
+      id: 4,
+      col1: 'June 23th,2023',
+      col2: 'Virgin Megastore',
+      col3: '$145',
+      col4: '$800',
       isCollapsed: true
     }
   ]);
@@ -40,43 +48,48 @@ export default function ArrayTransactions() {
 
   return (
     <table className='container-table'>
-      <thead>
-        <tr>
-          <th>DATE</th>
-          <th>DESCRIPTION</th>
-          <th>AMOUNT</th>
-          <th>BALANCE</th>
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row) => (
-          <React.Fragment key={row.id}>
-            <tr onClick={() => toggleRow(row.id)}>
-              <td className='transactionLine'>{row.col1}</td>
-              <td className='transactionLine'>{row.col2}</td>
-              <td className='transactionLine'>{row.col3}</td>
-              <td className='transactionLine'>{row.col4}</td>
-            </tr>
-            {!row.isCollapsed && (
-              <tr className='container-collapse'>
-                <td colSpan='4'>Transaction Type : Electronic {row.id}</td>
-                <td colSpan='4' className='modification-transactions'>
-                  Category : Food
-                  <div className='icon-write'>
-                    <img src={iconWrite} alt='Modify category' />
-                  </div>
-                </td>
-                <td colSpan='4' className='modification-transactions'>
-                  Notes:
-                  <div className='icon-write'>
-                    <img src={iconWrite} alt='Modify notes' />
-                  </div>
-                </td>
+      <div className='container-title-transactionLines'>
+        <thead>
+          <tr>
+            <th>DATE</th>
+            <th>DESCRIPTION</th>
+            <th>AMOUNT</th>
+            <th>BALANCE</th>
+          </tr>
+        </thead>
+      </div>
+
+      <div className='container-transactionLines'>
+        <tbody>
+          {rows.map((row) => (
+            <React.Fragment key={row.id}>
+              <tr onClick={() => toggleRow(row.id)}>
+                <td className='transactionLine'>{row.col1}</td>
+                <td className='transactionLine'>{row.col2}</td>
+                <td className='transactionLine'>{row.col3}</td>
+                <td className='transactionLine'>{row.col4}</td>
               </tr>
-            )}
-          </React.Fragment>
-        ))}
-      </tbody>
+              {!row.isCollapsed && (
+                <tr className='container-collapse'>
+                  <td colSpan='4'>Transaction Type : Electronic {row.id}</td>
+                  <td colSpan='4' className='modification-transactions'>
+                    Category : Food
+                    <div className='icon-write'>
+                      <img src={iconWrite} alt='Modify category' />
+                    </div>
+                  </td>
+                  <td colSpan='4' className='modification-transactions'>
+                    Notes:
+                    <div className='icon-write'>
+                      <img src={iconWrite} alt='Modify notes' />
+                    </div>
+                  </td>
+                </tr>
+              )}
+            </React.Fragment>
+          ))}
+        </tbody>
+      </div>
     </table>
   );
 }

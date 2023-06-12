@@ -27,16 +27,12 @@ export const userSlice = createSlice({
       state.error = false;
     },
     getProfile: (state, action) => {
-      console.log('userProfile reducer:', state);
-      console.log('userProfile reducer:', action);
       state.email = action.payload.email;
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
       state.id = action.payload.id;
     },
     editProfile: (state, action) => {
-      console.log('editProfile reducer:', state);
-      console.log('editProfile reducer:', action);
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
     },

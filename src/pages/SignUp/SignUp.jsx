@@ -19,7 +19,7 @@ export default function SignUp() {
       dispatch(signUpMiddleware(formDataSignUp));
       navigate('/login');
     } catch (error) {
-      console.log('composant signup', error);
+      console.log(error);
     }
   };
 
