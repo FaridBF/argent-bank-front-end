@@ -23,7 +23,7 @@ const Router = () => {
   const isUserConnected = useSelector((state) => state.user.isConnected);
 
   function canLoad(isUserConnected) {
-    console.log('isUserConnected', isUserConnected);
+    // console.log('isUserConnected', isUserConnected);
     return () => {
       if (isUserConnected) {
         return true;
