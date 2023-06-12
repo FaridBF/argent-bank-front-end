@@ -41,3 +41,12 @@ input#lastName {
   height: 2rem;
   width: 7rem;
 }
+
+/*transactions*/
+.link-transactions {
+  text-decoration: none;
+}
+
+.transaction-button {
+  cursor: pointer;
+}

@@ -47,7 +47,7 @@ export default function SignUp() {
               <input {...register('password')} type='password' id='password' />
             </div>
             <div className='input-wrapper'>
-              <label htmlFor='firstName'>Prénom</label>
+              <label htmlFor='firstName'>Firstname</label>
               <input
                 {...register('firstName')}
                 type='text'
@@ -56,7 +56,7 @@ export default function SignUp() {
               />
             </div>
             <div className='input-wrapper'>
-              <label htmlFor='lastname'>Nom</label>
+              <label htmlFor='lastname'>Lastname</label>
               <input
                 {...register('lastname')}
                 type='text'
@@ -65,6 +65,9 @@ export default function SignUp() {
               />
             </div>
             <input type='submit' value='Submit' className='login-button' />
+            <a href='/login' className='login-button'>
+              Return to home
+            </a>
           </form>
         </section>
       </main>

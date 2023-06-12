@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import '../ArrayTransactions/arrayTransactions.css';
+import iconWrite from '../../assets/icons/write-icon-solid.jpg';
 
 export default function ArrayTransactions() {
   const [rows, setRows] = useState([
@@ -59,8 +60,18 @@ export default function ArrayTransactions() {
             {!row.isCollapsed && (
               <tr className='container-collapse'>
                 <td colSpan='4'>Transaction Type : Electronic {row.id}</td>
-                <td colSpan='4'>Category : Food {row.id}</td>
-                <td colSpan='4'>Notes {row.id}</td>
+                <td colSpan='4' className='modification-transactions'>
+                  Category : Food
+                  <div className='icon-write'>
+                    <img src={iconWrite} alt='Modify category' />
+                  </div>
+                </td>
+                <td colSpan='4' className='modification-transactions'>
+                  Notes:
+                  <div className='icon-write'>
+                    <img src={iconWrite} alt='Modify notes' />
+                  </div>
+                </td>
               </tr>
             )}
           </React.Fragment>

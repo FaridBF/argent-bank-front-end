@@ -13,3 +13,13 @@
 .transactionLine {
   cursor: pointer;
 }
+
+.icon-write {
+  width: 1.4rem;
+  height: 1rem;
+}
+
+.modification-transactions {
+  display: flex;
+  align-items: center;
+}

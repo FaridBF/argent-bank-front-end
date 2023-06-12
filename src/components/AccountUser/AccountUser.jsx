@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../AccountUser/accountUser.css';
-
 export default function AccountUser({
   accountTitle,
   accountAmount,
@@ -16,7 +14,7 @@ export default function AccountUser({
         <p className='account-amount-description'>{accountAmountDescription}</p>
       </div>
       <div className='account-content-wrapper cta'>
-        <Link to='/transactions'>
+        <Link className='link-transactions' to='/transactions'>
           <button className='transaction-button'>View transactions</button>
         </Link>
       </div>
