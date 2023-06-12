@@ -10,6 +10,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import AccountUser from '../../components/AccountUser/AccountUser';
 
+import './profile.css';
+
 export default function Profile() {
   const dispatch = useDispatch();
   const selectedToken = useSelector((state) => state.user.token);
@@ -30,7 +32,11 @@ export default function Profile() {
   };
 
   const handleClick = () => {
-    setShowEditName(true);
+    if (showEditName) {
+      setShowEditName(false);
+    } else {
+      setShowEditName(true);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -40,8 +46,7 @@ export default function Profile() {
       lastName
     };
     dispatch(editUserProfileMiddleware(selectedToken, formDatas));
-
-    // console.log('submit', handleSubmit);
+    setShowEditName(false);
   };
 
   const handleReset = async (e) => {
@@ -52,8 +57,6 @@ export default function Profile() {
   const fetchData = () => {
     try {
       dispatch(userProfileMiddleware(selectedToken));
-
-      // console.log('token dans profile', selectedToken);
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +64,6 @@ export default function Profile() {
 
   useEffect(() => {
     if (selectedToken) {
-      // console.log('selectedToken ds useeffect:', selectedToken);
       fetchData();
     }
   }, [selectedToken]);
@@ -71,7 +73,7 @@ export default function Profile() {
       <Header />
       <main className='main bg-dark'>
         <div className='header'>
-          <h1>
+          <h1 className='title-profile'>
             Welcome back
             <br />
             {getfirstName} {getlastName}
@@ -87,7 +89,7 @@ export default function Profile() {
                     id='firstName'
                     value={firstName}
                     onChange={handleFirstName}
-                    placeholder='Tony'
+                    placeholder={getfirstName}
                     type='text'
                     name='firstName'
                   />
@@ -95,14 +97,18 @@ export default function Profile() {
                     id='lastName'
                     value={lastName}
                     onChange={handleLastName}
-                    placeholder='Jarvis'
+                    placeholder={getlastName}
                     type='text'
                     name='lastName'
                   />
                 </div>
                 <div className='bottom-container-editName'>
-                  <button onClick={handleSubmit}>Save</button>
-                  <button onClick={handleReset}>Cancel</button>
+                  <button className='button-save' onClick={handleSubmit}>
+                    Save
+                  </button>
+                  <button className='button-cancel' onClick={handleReset}>
+                    Cancel
+                  </button>
                 </div>
               </div>
             )}
