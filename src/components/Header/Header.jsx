@@ -1,15 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
-import { logOut } from '../../redux/slices/userSlice';
 
 import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 
 export default function Header() {
-  // const logOut = useSelector((state) => state.user);
-  console.log('logOut', logOut);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const isUserPage = location.pathname === '/profile';
@@ -71,12 +67,6 @@ export default function Header() {
               />
               <h1 className='sr-only'>Argent Bank</h1>
             </a>
-            {/* <div>
-              <a className='main-nav-item' onClick={handleLogout}>
-                <i className='fa fa-sign-out'></i>
-                Sign Out
-              </a>
-            </div> */}
           </>
         ) : null}
       </nav>
