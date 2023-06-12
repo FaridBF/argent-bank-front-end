@@ -6,6 +6,29 @@
   background-color: #12002b;
 }
 
+.bg-dark-login {
+  min-height: 35rem;
+  display: flex;
+  align-items: center;
+  background-color: #12002b;
+}
+
+.bg-dark-signup {
+  margin-top: 4rem;
+  min-height: 35rem;
+  display: flex;
+  align-items: center;
+  background-color: #12002b;
+}
+
+.bg-dark-transactions {
+  background-color: #12002b;
+  min-height: 48rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -157,7 +180,7 @@
   background-color: white;
   width: 300px;
   margin: 0 auto;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   padding: 2rem;
 }
 

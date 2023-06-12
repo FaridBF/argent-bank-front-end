@@ -28,7 +28,7 @@ export default function SignUp() {
   return (
     <div>
       <Header />
-      <main className='main bg-dark'>
+      <main className='main bg-dark-signup'>
         <section className='login-content'>
           <i className='fa fa-user-circle login-icon'></i>
           <h1>Sign up</h1>

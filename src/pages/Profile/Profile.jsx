@@ -71,7 +71,7 @@ export default function Profile() {
   return (
     <div>
       <Header />
-      <main className='main bg-dark'>
+      <main className='main bg-dark-transactions'>
         <div className='header'>
           <h1 className='title-profile'>
             Welcome back

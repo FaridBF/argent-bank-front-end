@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div>
       <Header />
-      <main className='main bg-dark'>
+      <main className='main bg-dark-login'>
         <section className='login-content'>
           <i className='fa fa-user-circle login-icon'></i>
           <h1>Sign In</h1>
