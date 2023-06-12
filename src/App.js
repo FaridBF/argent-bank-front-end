@@ -1,10 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
 import { Outlet } from 'react-router-dom';
 
 /**
- * Représente le layout qui contient le header et le menu de navigation
- * Outlet représente l'élément enfant en fonction de la route sur laquelle on se trouve
+ * Represents the layout that contains the header and the navigation menu
+ * Outlet represents the child item based on the road you are on
  */
 
 const App = () => {
