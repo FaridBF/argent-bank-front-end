@@ -1,26 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import logInMiddleware from '../../redux/middleware/logInMiddleware';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
-// import ProtectedRoute from '../../redux/middleware/ProtectedRouteMiddleware';
-
 export default function Login() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const onSubmit = async (formDataSignIn) => {
-    try {
-      dispatch(logInMiddleware(formDataSignIn));
-      // navigate('/profile');
-      // ProtectedRoute;
-    } catch (error) {
-      console.log(error);
-    }
+  const onSubmit = (formDataSignIn) => {
+    dispatch(logInMiddleware(formDataSignIn));
   };
 
   const {
@@ -28,6 +21,15 @@ export default function Login() {
     handleSubmit,
     formState: { errors }
   } = useForm();
+
+  // Obtenez l'état de connexion depuis Redux
+  const isConnected = useSelector((state) => state.user.isConnected);
+
+  useEffect(() => {
+    if (isConnected) {
+      navigate('/profile');
+    }
+  }, [isConnected, navigate]);
 
   return (
     <div>
@@ -58,9 +60,6 @@ export default function Login() {
               <input type='checkbox' id='remember-me' />
               <label htmlFor='remember-me'>Remember me</label>
             </div>
-            {/* <a href='/profile' className='login-button'>
-              Sign In
-            </a> */}
             <input type='submit' value='Submit' className='login-button' />
             <a href='/signup' className='login-button'>
               Sign Up
