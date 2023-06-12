@@ -52,7 +52,7 @@ export default function SignUp() {
                 {...register('firstName')}
                 type='text'
                 id='firstName'
-                placeholder='Prénom'
+                placeholder='Firstname'
               />
             </div>
             <div className='input-wrapper'>
@@ -61,7 +61,7 @@ export default function SignUp() {
                 {...register('lastname')}
                 type='text'
                 id='lastname'
-                placeholder='Nom'
+                placeholder='Lastname'
               />
             </div>
             <input type='submit' value='Submit' className='login-button' />
