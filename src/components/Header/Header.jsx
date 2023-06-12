@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 
 export default function Header() {
@@ -8,6 +10,8 @@ export default function Header() {
   const isUserPage = location.pathname === '/profile';
   const isSignInPage = location.pathname === '/login';
   const isTransactionsPage = location.pathname === '/transactions';
+
+  const getfirstName = useSelector((state) => state.user.firstName);
 
   return (
     <header>
@@ -43,7 +47,7 @@ export default function Header() {
             <div>
               <a className='main-nav-item' href='/profile'>
                 <i className='fa fa-user-circle'></i>
-                Tony
+                {getfirstName}
               </a>
               <a className='main-nav-item' href='/'>
                 <i className='fa fa-sign-out'></i>
