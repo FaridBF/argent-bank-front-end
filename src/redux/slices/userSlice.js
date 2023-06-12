@@ -26,7 +26,7 @@ export const userSlice = createSlice({
       // state.isConnected = false;
       state.error = false;
     },
-    // logOut: () => initialState,
+    logOut: () => initialState,
     getProfile: (state, action) => {
       state.email = action.payload.email;
       state.firstName = action.payload.firstName;
@@ -45,6 +45,6 @@ export const userSlice = createSlice({
 });
 
 //export des mes actions
-export const { signIn, signUp, showError, getProfile, editProfile } =
+export const { signIn, signUp, showError, getProfile, editProfile, logOut } =
   userSlice.actions;
 export default userSlice.reducer;
