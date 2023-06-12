@@ -8,24 +8,24 @@ export default function ArrayTransactions() {
       id: 1,
       col1: '20 juin 2020',
       col2: 'Golden Sun Bakery',
-      col3: '5€',
-      col4: '2000€',
+      col3: '5$',
+      col4: '2000$',
       isCollapsed: true
     },
     {
       id: 2,
       col1: '20 juin 2020',
       col2: 'Golden Sun Bakery',
-      col3: '5€',
-      col4: '2000€',
+      col3: '5$',
+      col4: '2000$',
       isCollapsed: true
     },
     {
       id: 3,
       col1: '20 juin 2020',
       col2: 'Golden Sun Bakery',
-      col3: '5€',
-      col4: '2000€',
+      col3: '5$',
+      col4: '2000$',
       isCollapsed: true
     }
   ]);

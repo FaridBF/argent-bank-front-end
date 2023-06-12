@@ -117,17 +117,17 @@ export default function Profile() {
         <h2 className='sr-only'>Accounts</h2>
         <AccountUser
           accountTitle={'Argent Bank Checking (x8349)'}
-          accountAmount={'2520.34'}
+          accountAmount={'$2520.34'}
           accountAmountDescription={'Available Balance'}
         />
         <AccountUser
           accountTitle={'Argent Bank Savings (x6712)'}
-          accountAmount={'14296.42'}
+          accountAmount={'$14296.42'}
           accountAmountDescription={'Available Balance'}
         />
         <AccountUser
           accountTitle={'Argent Bank CreditCard (x8349)'}
-          accountAmount={'224.35'}
+          accountAmount={'$224.35'}
           accountAmountDescription={'Available Balance'}
         />
       </main>
