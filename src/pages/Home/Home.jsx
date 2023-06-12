@@ -4,12 +4,11 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Banner from '../../components/Banner/Banner';
 
-import '../Home/home.css';
-
 import iconSecurity from '../../assets/icons/icon-security.png';
 import iconChat from '../../assets/icons/icon-chat.png';
 import iconMoney from '../../assets/icons/icon-money.png';
 import FeaturesItem from '../../components/FeaturesItem/FeaturesItem';
+import '../Home/home.css';
 
 export default function Home() {
   // Feature's titles

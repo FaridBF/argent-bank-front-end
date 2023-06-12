@@ -23,7 +23,6 @@ export const userSlice = createSlice({
     },
     signUp: (state, action) => {
       state.token = action.payload.token;
-      // state.isConnected = false;
       state.error = false;
     },
     logOut: () => initialState,

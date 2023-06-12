@@ -1,11 +1,11 @@
 import { StrictMode } from 'react';
 
 import * as ReactDOM from 'react-dom/client';
+import Router from './router';
 import { Provider } from 'react-redux';
 import store from './redux/store/redux-store';
 
 import './styles/index.css';
-import Router from './router';
 
 /**
  * Router is a variable that represents a browser router for the application.

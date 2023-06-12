@@ -3,7 +3,6 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ArrayTransactions from '../../components/ArrayTransactions/ArrayTransactions';
-
 import '../Transactions/transactions.css';
 
 export default function Transactions(props) {

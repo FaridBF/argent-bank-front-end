@@ -1,4 +1,5 @@
 import userStore from '../store/userStore';
+
 import { showError, signUp } from '../slices/userSlice';
 
 const signUpMiddleware = (formDataSignUp) => {

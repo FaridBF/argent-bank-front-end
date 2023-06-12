@@ -1,13 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  redirect
-} from 'react-router-dom';
-
-import { Provider } from 'react-redux';
-import store from './redux/store/redux-store';
-
-import './styles/index.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Page404 from './pages/Page404/Page404';
 import Home from './pages/Home/Home';
@@ -15,7 +6,9 @@ import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import Transactions from './pages/Transactions/Transactions';
 import SignUp from './pages/SignUp/SignUp';
-// import ProtectedRoute from './redux/middleware/ProtectedRouteMiddleware';
+
+import './styles/index.css';
+
 /**
  * Router is a variable that represents a browser router for the application.
  * The router is created using the `BrowserRouter` function from the `react-router-dom` library.

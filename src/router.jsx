@@ -1,6 +1,3 @@
-import { StrictMode } from 'react';
-
-import * as ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -19,11 +16,9 @@ import SignUp from './pages/SignUp/SignUp';
 import App from './App';
 
 const Router = () => {
-  // const isUserConnected = via selector récupérer isConnected
   const isUserConnected = useSelector((state) => state.user.isConnected);
 
   function canLoad(isUserConnected) {
-    // console.log('isUserConnected', isUserConnected);
     return () => {
       if (isUserConnected) {
         return true;

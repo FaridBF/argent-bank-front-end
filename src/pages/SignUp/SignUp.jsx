@@ -1,23 +1,20 @@
 import React from 'react';
+
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-
 import { useDispatch } from 'react-redux';
-import signUpMiddleware from '../../redux/middleware/signUpMiddleware';
 
+import signUpMiddleware from '../../redux/middleware/signUpMiddleware';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 import '../SignUp/signup.css';
 
 export default function SignUp() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = async (formDataSignUp) => {
     try {
       dispatch(signUpMiddleware(formDataSignUp));
-      // navigate('/login');
     } catch (error) {
       console.log(error);
     }

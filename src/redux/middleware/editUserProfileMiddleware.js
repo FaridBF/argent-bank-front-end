@@ -1,4 +1,5 @@
 import userStore from '../store/userStore';
+
 import { showError, editProfile } from '../slices/userSlice';
 
 const userProfileMiddleware = (token, formDatas) => {

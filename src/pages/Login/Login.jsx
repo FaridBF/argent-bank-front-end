@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
+
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import logInMiddleware from '../../redux/middleware/logInMiddleware';
-
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
