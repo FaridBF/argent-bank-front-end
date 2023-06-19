@@ -51,10 +51,10 @@ export default function ArrayTransactions() {
       <div className='container-title-transactionLines'>
         <thead>
           <tr>
-            <th>DATE</th>
-            <th>DESCRIPTION</th>
-            <th>AMOUNT</th>
-            <th>BALANCE</th>
+            <th className='titleColumn'>DATE</th>
+            <th className='titleColumn'>DESCRIPTION</th>
+            <th className='titleColumn'>AMOUNT</th>
+            <th className='titleColumn'>BALANCE</th>
           </tr>
         </thead>
       </div>

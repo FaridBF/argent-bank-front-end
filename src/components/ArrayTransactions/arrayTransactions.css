@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 26rem;
-  background-color: #e0e6ed;
+  background-color: #12002b;
   justify-content: center;
 }
 
@@ -36,6 +36,7 @@ tbody {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #00bc78;
 }
 
 thead {
@@ -47,8 +48,7 @@ thead {
 
 tr {
   display: flex;
-  width: 100%;
-
+  width: 50rem;
   height: 4rem;
   border-bottom: black solid 0.1rem;
   justify-content: space-around;
@@ -61,6 +61,16 @@ tr.container-collapse {
 
 td.transactionLine {
   font-weight: 500;
+  font-size: 17px;
+  color: white;
+  width: 100%;
+}
+
+.titleColumn {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  width: 100%;
 }
 
 .container-transactionLines {
