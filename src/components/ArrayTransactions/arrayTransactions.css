@@ -20,6 +20,7 @@
 .icon-write {
   width: 1.4rem;
   height: 1rem;
+  mix-blend-mode: color-burn;
   cursor: pointer;
 }
 
