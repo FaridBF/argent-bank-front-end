@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-
 import '../ArrayTransactions/arrayTransactions.css';
 import iconWrite from '../../assets/icons/write-icon-solid.jpg';
 
+/**
+ * ArrayTransactions component
+ * @returns {JSX.Element} ArrayTransactions component
+ */
 export default function ArrayTransactions() {
   const [rows, setRows] = useState([
     {
@@ -39,6 +41,10 @@ export default function ArrayTransactions() {
     }
   ]);
 
+  /**
+   * Function to toggle the display state of a transaction row.
+   * @param {number} id - The ID of the transaction row.
+   */
   const toggleRow = (id) => {
     const updatedRows = rows.map((row) =>
       row.id === id ? { ...row, isCollapsed: !row.isCollapsed } : row

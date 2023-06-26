@@ -1,10 +1,12 @@
-import React from 'react';
-
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import argentBankLogo from '../../assets/logo/argentBankLogo.png';
 
+/**
+ * Header Component
+ * @returns {JSX.Element} Header Component
+ */
 export default function Header() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';

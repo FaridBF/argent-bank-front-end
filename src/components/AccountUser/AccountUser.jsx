@@ -1,7 +1,13 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
+/**
+ * AccountUser component.
+ * @param {Object} props - The component props.
+ * @param {string} props.accountTitle - The title of the account.
+ * @param {string} props.accountAmount - The amount of the account.
+ * @param {string} props.accountAmountDescription - The description of the account amount.
+ * @returns {JSX.Element} AccountUser component.
+ */
 export default function AccountUser({
   accountTitle,
   accountAmount,

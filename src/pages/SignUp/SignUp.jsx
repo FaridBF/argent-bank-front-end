@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
@@ -9,9 +7,18 @@ import Footer from '../../components/Footer/Footer';
 
 import '../SignUp/signup.css';
 
+/**
+ * SignUp component.
+ * Renders the sign-up page with a form to create a new user account.
+ * @returns {JSX.Element} SignUp component.
+ */
 export default function SignUp() {
   const dispatch = useDispatch();
-
+  /**
+   * Form submit event handler.
+   * Dispatches the signUpMiddleware to create a new user account.
+   * @param {Object} formDataSignUp - Form data for sign-up
+   */
   const onSubmit = async (formDataSignUp) => {
     try {
       dispatch(signUpMiddleware(formDataSignUp));

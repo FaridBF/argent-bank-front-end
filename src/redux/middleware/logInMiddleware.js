@@ -2,6 +2,13 @@ import userStore from '../store/userStore';
 
 import { signIn, showError } from '../slices/userSlice';
 
+/**
+ * Middleware function for user login.
+ * Calls the API to sign in the user using the provided form data.
+ * Dispatches actions based on the API response.
+ * @param {Object} formDataSignIn - Form data for user login
+ * @returns {Function} Middleware function
+ */
 const logInMiddleware = (formDataSignIn) => {
   return async (dispatch) => {
     try {

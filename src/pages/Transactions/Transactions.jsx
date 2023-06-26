@@ -1,11 +1,14 @@
-import React from 'react';
-
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ArrayTransactions from '../../components/ArrayTransactions/ArrayTransactions';
 import '../Transactions/transactions.css';
 
-export default function Transactions(props) {
+/**
+ * Transactions component.
+ * Renders the transactions page displaying account details and a list of transactions.
+ * @returns {JSX.Element} Transactions component
+ */
+export default function Transactions() {
   return (
     <div>
       <Header />

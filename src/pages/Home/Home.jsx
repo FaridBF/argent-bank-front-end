@@ -1,7 +1,5 @@
-import React from 'react';
-
-import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import Banner from '../../components/Banner/Banner';
 
 import iconSecurity from '../../assets/icons/icon-security.png';
@@ -10,6 +8,11 @@ import iconMoney from '../../assets/icons/icon-money.png';
 import FeaturesItem from '../../components/FeaturesItem/FeaturesItem';
 import '../Home/home.css';
 
+/**
+ * Home component.
+ * Renders the home page with header, banner, features, and footer.
+ * @returns {JSX.Element} Home component.
+ */
 export default function Home() {
   // Feature's titles
   const featureTitleChat = 'You are our #1 priority';

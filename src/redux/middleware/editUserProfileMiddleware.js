@@ -2,6 +2,14 @@ import userStore from '../store/userStore';
 
 import { showError, editProfile } from '../slices/userSlice';
 
+/**
+ * Middleware function for updating user profile.
+ * Calls the API to update the user profile using the provided token and form data.
+ * Dispatches actions based on the API response.
+ * @param {string} token - User token
+ * @param {Object} formDatas - Form data for updating the user profile
+ * @returns {Function} Middleware function
+ */
 const userProfileMiddleware = (token, formDatas) => {
   return async (dispatch) => {
     try {

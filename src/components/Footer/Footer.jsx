@@ -1,7 +1,7 @@
 import './footer.css';
 
 /**
- * Composant footer
+ * Footer component
  */
 function Footer() {
   return (

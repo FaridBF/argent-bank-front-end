@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  /* état initial */
   id: null,
   email: '',
   firstName: '',
@@ -12,6 +11,9 @@ const initialState = {
   isConnected: false
 };
 
+/**
+ * Redux slice for managing user-related state.
+ */
 export const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -43,7 +45,7 @@ export const userSlice = createSlice({
   }
 });
 
-//export des mes actions
+// Export the action creators
 export const { signIn, signUp, showError, getProfile, editProfile, logOut } =
   userSlice.actions;
 export default userSlice.reducer;

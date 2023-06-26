@@ -8,10 +8,20 @@ import logInMiddleware from '../../redux/middleware/logInMiddleware';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
+/**
+ * Login component.
+ * Renders the login page with a form for user login.
+ * @returns {JSX.Element} Login component.
+ */
+
 export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  /**
+   * Form submit handler.
+   * Dispatches the login middleware to log in the user.
+   * @param {Object} formDataSignIn - Form data for user sign-in.
+   */
   const onSubmit = (formDataSignIn) => {
     dispatch(logInMiddleware(formDataSignIn));
   };
@@ -22,9 +32,11 @@ export default function Login() {
     formState: { errors }
   } = useForm();
 
-  // Obtenez l'état de connexion depuis Redux
+  // Get connection state from Redux
   const isConnected = useSelector((state) => state.user.isConnected);
-
+  /**
+   * Effect hook to navigate to the profile page if the user is connected.
+   */
   useEffect(() => {
     if (isConnected) {
       navigate('/profile');

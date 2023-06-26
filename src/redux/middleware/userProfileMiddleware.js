@@ -2,6 +2,13 @@ import userStore from '../store/userStore';
 
 import { showError, getProfile } from '../slices/userSlice';
 
+/**
+ * Middleware function for fetching user profile.
+ * Calls the API to get the user profile using the provided token.
+ * Dispatches actions based on the API response.
+ * @param {string} token - User token
+ * @returns {Function} Middleware function
+ */
 const userProfileMiddleware = (token) => {
   return async (dispatch) => {
     try {
