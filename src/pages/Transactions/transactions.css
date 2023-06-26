@@ -5,3 +5,9 @@
   width: 100%;
   flex: 1;
 }
+
+@media (min-width: 0px) {
+  .container-account {
+    min-width: 800px;
+  }
+}

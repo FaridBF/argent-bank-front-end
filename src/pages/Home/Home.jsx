@@ -27,7 +27,7 @@ export default function Home() {
     '  We use top of the line encryption to make sure your data and money is always safe.';
 
   return (
-    <div>
+    <div className='container-home'>
       <Header />
       <main>
         <Banner />

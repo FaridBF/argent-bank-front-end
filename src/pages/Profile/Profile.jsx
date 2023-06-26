@@ -102,7 +102,7 @@ export default function Profile() {
   }, [selectedToken]);
 
   return (
-    <div>
+    <div className='container-profile'>
       <Header />
       <main className='main bg-dark-transactions'>
         <div className='header'>

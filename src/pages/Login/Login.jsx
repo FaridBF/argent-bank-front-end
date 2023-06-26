@@ -44,7 +44,7 @@ export default function Login() {
   }, [isConnected, navigate]);
 
   return (
-    <div>
+    <div className='container-login'>
       <Header />
       <main className='main bg-dark-login'>
         <section className='login-content'>

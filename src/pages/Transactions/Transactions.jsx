@@ -10,7 +10,7 @@ import '../Transactions/transactions.css';
  */
 export default function Transactions() {
   return (
-    <div>
+    <div className='container-account'>
       <Header />
       <section className='account'>
         <div className='account-content-wrapper-transactions'>

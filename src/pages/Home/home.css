@@ -288,3 +288,19 @@
     width: 200px;
   }
 }
+
+/* General responsive*/
+@media (min-width: 0px) {
+  .container-home {
+    min-width: 400px;
+  }
+  .container-login {
+    min-width: 400px;
+  }
+  .container-sign-up {
+    min-width: 400px;
+  }
+  .container-profile {
+    min-width: 400px;
+  }
+}

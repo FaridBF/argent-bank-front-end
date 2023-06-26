@@ -30,7 +30,7 @@ export default function SignUp() {
   const { register, handleSubmit } = useForm();
 
   return (
-    <div>
+    <div className='container-sign-up'>
       <Header />
       <main className='main bg-dark-signup'>
         <section className='login-content'>
