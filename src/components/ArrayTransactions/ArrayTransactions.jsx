@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import '../ArrayTransactions/arrayTransactions.css';
 import iconWrite from '../../assets/icons/write-icon-solid.jpg';
 
