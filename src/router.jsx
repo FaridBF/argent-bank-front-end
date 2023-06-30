@@ -11,7 +11,7 @@ import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import Transactions from './pages/Transactions/Transactions';
 import SignUp from './pages/SignUp/SignUp';
-import Swagger from './swagger/Swagger';
+// import Swagger from './swagger/Swagger';
 import App from './App';
 
 import '../src/styles/index.css';
@@ -50,8 +50,8 @@ const Router = () => {
       loader: canLoad(isUserConnected),
       element: <Profile />
     },
-    { path: '/transactions', element: <Transactions /> },
-    { path: '/swagger', element: <Swagger /> }
+    { path: '/transactions', element: <Transactions /> }
+    // { path: '/swagger', element: <Swagger /> }
   ]);
   return (
     <RouterProvider router={routes}>
