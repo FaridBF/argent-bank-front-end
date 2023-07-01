@@ -1,6 +1,7 @@
 import userStore from '../store/userStore';
 
 import { showError, signUp } from '../slices/userSlice';
+import { redirect } from 'react-router-dom';
 
 /**
  * Middleware function for user sign up.
@@ -17,11 +18,13 @@ const signUpMiddleware = (formDataSignUp) => {
       if (status === 200) {
         const tokenObject = data.body;
         dispatch(signUp(tokenObject));
+        alert('Inscription réussie');
       }
     } catch (error) {
       const status = error.response.status;
       if (status === 400) {
         dispatch(showError(error.response.data.message));
+        alert("L'email est déjà utilisé");
       } else {
         throw new Error(error.message);
       }

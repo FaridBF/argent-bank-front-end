@@ -48,7 +48,7 @@ export default function Header() {
               <h1 className='sr-only'>Argent Bank</h1>
             </a>
             <div>
-              <a className='main-nav-item' href='/profile'>
+              <a className='main-nav-item'>
                 <i className='fa fa-user-circle'></i>
                 {getfirstName}
               </a>
